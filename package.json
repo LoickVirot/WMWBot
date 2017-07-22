@@ -1,0 +1,16 @@
+{
+  "name": "wmwbot",
+  "version": "1.0.0",
+  "description": "A bot to manage discord servers",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "Loick Virot",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "latest",
+    "mongodb": "^2.2.30"
+  }
+}
