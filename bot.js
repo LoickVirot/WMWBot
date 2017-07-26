@@ -3,7 +3,8 @@ const api = require('./config/api.js');
 const database = require('./config/database');
 
 const eventHandler = {
-  ready: require('./events/ready.js')
+    ready: require('./events/ready'),
+    message: require('./events/message')
 };
 
 let MongoClient = require('mongodb').MongoClient
@@ -24,6 +25,10 @@ MongoClient.connect(url, function(err, db) {
 
         bot.on('ready', function() {
             eventHandler.ready(bot, db)
+        });
+
+        bot.on('message', message => {
+            eventHandler.message(bot, db, message);
         });
 
         bot.login(api.discord_token);
