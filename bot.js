@@ -19,16 +19,13 @@ MongoClient.connect(url, function(err, db) {
     }
     else {
       console.log('Database connected');
+
+        const bot = new Discord.Client();
+
+        bot.on('ready', function() {
+            eventHandler.ready(bot, db)
+        });
+
+        bot.login(api.discord_token);
     }
-
-    db.close();
 });
-
-const bot = new Discord.Client();
-
-bot.on('ready', function() {
-  eventHandler.ready()
-});
-
-
-bot.login(api.discord_token);
