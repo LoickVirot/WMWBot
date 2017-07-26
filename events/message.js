@@ -8,6 +8,16 @@ module.exports = function (bot, db, message) {
         switch (msgContent) {
             case '!ping':
                 message.channel.send('pong');
+                break;
+            case '!rules':
+                let connection = db.collection('guild');
+
+                connection.findOne({id: message.guild.id})
+                    .then(function (guild) {
+                        message.channel.send(guild.rules);
+                    }).catch(function (err) {
+                        console.log(err);
+                    })
         }
     }
 };
