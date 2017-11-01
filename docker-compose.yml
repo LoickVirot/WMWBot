@@ -1,9 +1,10 @@
 version: '2'
 services:
   node:
-    image: node:8.8.1
+    build: .
     user: node
     working_dir: /home/node/app
     volumes:
       - ./app:/home/node/app
-    command: npm start
+    command:
+      - nodemon
