@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "latest",
-    "mongodb": "^2.2.30"
+    "mongodb": "^2.2.30",
+    "raven": "^2.2.1"
   }
 }

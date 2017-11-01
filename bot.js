@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const api = require('./config/api.js');
 const database = require('./config/database');
+const Raven = require('raven');
+
+Raven.config(api.ravenUrl).install();
 
 const eventHandler = {
     ready: require('./events/ready'),
