@@ -10,13 +10,16 @@ module.exports = function (bot, db, message) {
   if (msgContent.charAt(0) === '!') {
     switch (msgContent) {
       case '!ping':
-        message.channel.send('pong');
+        message.author.createDM()
+        .then(function(channel){
+            channel.send("Pong !");
+        });
         break;
       case '!help':
-        help.showHelp(message.channel, db)
+        help.showHelp(message.author, db)
         break;
       case '!rules':
-        rules.showRules(message.channel, db);
+        rules.showRules(message.author, db);
         break;
     }
   }
