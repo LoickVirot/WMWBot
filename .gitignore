@@ -62,4 +62,4 @@ typings/
 .idea/
 
 # Application secrets
-config/parameters.js
+app/config/parameters.js
