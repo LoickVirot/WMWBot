@@ -12,6 +12,6 @@ module.exports = function (bot, db, user) {
             channel.send('Si tu as besoin de savoir comment je fonctionne, tape `!help`.');
         })
         .catch(function (err) {
-            console.log(err);
+            throw new Error(err);
         });
 };
